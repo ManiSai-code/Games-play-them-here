@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JS Arcade Hub</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div id="main-menu" class="screen active">
+        <h1>🕹️ PLAY 🕹️</h1>
+        <p>Select a game to start</p>
+        <div class="game-grid">
+            <button onclick="loadGame('snake')">🐍 Snake</button>
+            <button onclick="loadGame('memory')">🧠 Memory Match</button>
+            <button onclick="loadGame('dino')">🐔 Chicken Runner</button>
+            <button onclick="loadGame('typing')">⌨️ Typing Defense</button>
+        </div>
+    </div>
+
+    
+<div id="game-snake" class="screen">
+    <h2>Snake</h2>
+    
+    <div style="margin-bottom: 10px;">
+        <button class="diff-btn" onclick="setSnakeSpeed(200)">🐢 Slow</button>
+        <button class="diff-btn" onclick="setSnakeSpeed(100)">🐕 Normal</button>
+        <button class="diff-btn" onclick="setSnakeSpeed(50)">🐆 Fast</button>
+    </div>
+
+    <canvas id="snakeCanvas" width="400" height="400"></canvas>
+    
+    <br>
+    <button class="restart-btn" id="btn-snake" onclick="startSnake()">🔄 Restart</button>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Menu</button>
+</div>
+    
+
+    <div id="game-memory" class="screen">
+    <h2>Memory Match</h2>
+    <div id="memory-board"></div>
+    
+    <br>
+    <button class="restart-btn" id="btn-memory" onclick="startMemory()">🔄 Restart</button>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Menu</button>
+</div>
+
+    <div id="game-dino" class="screen">
+    <h2>Dino Runner</h2>
+    <div id="dino-game-area">
+        <div id="dino">🐓</div>
+        <div id="cactus">🌵</div>
+    </div>
+    <button class="restart-btn" id="btn-dino" onclick="startDino()">🔄 Restart</button>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Menu</button>
+</div>
+
+    <div id="game-typing" class="screen">
+    <h2>Typing Defense</h2>
+    <div id="word-area"></div>
+    <input type="text" id="type-input" placeholder="Type here..." autofocus>
+    <button class="restart-btn" id="btn-typing" onclick="startTyping()">🔄 Restart</button>
+    <button class="back-btn" onclick="goBack()">⬅ Back to Menu</button>
+</div>
+
+    <script src="script.js"></script>
+</body>
+</html>
